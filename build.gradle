@@ -1,0 +1,17 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'tw.zhuran'
+version = '0.0.1'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.google.guava:guava:24.1-jre'
+    compile 'com.github.javadev:underscore:1.30'
+    testCompile 'junit:junit:4.12'
+}
+
