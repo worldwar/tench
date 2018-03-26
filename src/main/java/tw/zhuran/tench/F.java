@@ -6,6 +6,7 @@ import com.google.common.base.Supplier;
 import com.google.common.collect.Lists;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class F {
     public static <T> List<T> repeat(T v, int count) {
@@ -69,5 +70,9 @@ public class F {
 
     public static <T> String string(Iterable<T> list, String splitter) {
         return Joiner.on(splitter).join(list);
+    }
+
+    public static List<String> split(String string) {
+        return string.codePoints().mapToObj(x -> new String(Character.toChars(x))).collect(Collectors.toList());
     }
 }
